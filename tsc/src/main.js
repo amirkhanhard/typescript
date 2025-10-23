@@ -5,3 +5,5 @@ const sum = (a, b) => {
     return a + b;
 };
 const su = sum(1, 2);
+const u = (user) => user;
+console.log(u({ name: "a" }));
