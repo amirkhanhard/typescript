@@ -66,8 +66,18 @@ npx ts-node src/main.ts
 
 ///////////////////////////////////////////////////
 
+we should alway provide type guard/narrowing for optional properties.
+passing undefined as an argument to a function will take default value.
+default value cant be achieved by interface or type aliases.
+
 
 ///////////////////////////////////////////////////
+to be learn
+never 
+ubknown
+any
+
+function useState<S>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<S>>];
 
 
 ///////////////////////////////////////////////////
