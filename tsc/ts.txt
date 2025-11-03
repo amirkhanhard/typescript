@@ -7,7 +7,8 @@
 3. install vscode live server ext.
 
 4. for live monitoring changes
-tsc main.ts -w
+tsc main.ts -w  //this will compile one file on same path
+tsc -w //will compile all files accordingly
 
 
 5. tsc --init
@@ -40,6 +41,16 @@ tsconfig.json
 
 
 
+compile typescript first. beautiful error with description and file. Recommended way.
+npx tsc
+npx tsc src/class.ts
+
+tsc src/class.ts
+
+
+
+
+
 ///////////////////////////////////////////////////
 
 ->to check where global packages installed.
@@ -64,6 +75,10 @@ install ts-node
 npm install -g ts-node
 npx ts-node src/main.ts 
 
+ts-node --transpile-only src/class.ts
+ts-node src/class.ts
+
+
 ///////////////////////////////////////////////////
 
 we should alway provide type guard/narrowing for optional properties.
@@ -78,7 +93,6 @@ ubknown
 any
 
 function useState<S>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<S>>];
-
 
 ///////////////////////////////////////////////////
 

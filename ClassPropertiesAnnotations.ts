@@ -130,3 +130,106 @@ let savAcc = new SavingsAccount(500);
 console.log(savAcc);//SavingsAccount { balance: 500, accountType: 'Savings' }
 
 
+///////////////////////////////
+class Coder {
+  name: string;
+  age: string;
+  music: string;
+  lang: string;
+
+  //   public readonly name: string;
+  //   private age: string;
+  //   protected music: string;
+  //   public lang: string;
+
+  mylang!: string; //assertion
+
+  constructor(
+    name: string,
+    age: string,
+    music: string,
+    lang: string
+    //  mobile:string
+  ) {
+    this.name = name;
+    this.age = name;
+    this.music = name;
+    this.lang = name;
+    // this.mobile = mobile;
+  }
+  public returnPrivate() {
+    return this.age;
+  }
+}
+
+const ob = new Coder(
+  "asdf",
+  "1",
+  "asdff",
+  "english"
+  // "1212121212"
+);
+console.log(ob);
+console.log(ob.name);
+// ob.name = "123" //cant assign to readoly property
+// console.log(ob.age);
+console.log(ob.returnPrivate());
+
+interface Com {
+  name: string;
+  instrument: string;
+  action(action: string): string;
+}
+class Gen implements Com {
+  name!: string;
+  instrument!: string;
+  constructor(name: string, instrument: string) {
+    this.name = name;
+    this.instrument = instrument;
+  }
+  action(action: string): string {
+    return `${this.name} ${action} ${this.instrument}`;
+  }
+}
+
+const ob2 = new Gen("Amir ", "Guitar");
+console.log(ob2.action("Plays"));
+
+class Actions {
+  act: string[] = [];
+  static counter: number = 1;
+  constructor(act: string) {
+    this.act.push(act);
+  }
+  getActions() {
+    return this.act;
+  }
+  public get action(): string[] {
+    return this.act;
+  }
+  public set action(act: string) {
+    if (typeof act != "string") {
+      return;
+    }
+    this.act.push(act);
+    // return this.act; // setters cant return a value;
+    ++Actions.counter;
+  }
+}
+
+const coder = new Actions("default");
+
+console.log(coder.getActions());
+console.log("Actions.counter = " + Actions.counter);
+
+coder.action = "play";
+
+console.log(coder.getActions());
+console.log("Actions.counter = " + Actions.counter);
+
+coder.action = "walk";
+
+console.log(coder.getActions());
+console.log("Actions.counter = " + Actions.counter);
+
+
