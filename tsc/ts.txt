@@ -95,6 +95,9 @@ any
 function useState<S>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<S>>];
 
 ///////////////////////////////////////////////////
+index signrature
+generic 
+utility
 
 
 ///////////////////////////////////////////////////
